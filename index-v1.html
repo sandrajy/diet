@@ -38,7 +38,6 @@
                   aria-label=".form-select-lg example"
                   id="exampleInputEmail1"
                 >
-                  <option-section></option-section>
                   <option selected>Open this select menu</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
@@ -64,25 +63,6 @@
           message: "飲食營養資料庫及建議方案模組",
         },
         components: {
-          "option-section": {
-            template:
-              '<ul><li v-for="item in menuItems">{{ item.text }}</li></ul>',
-            data: function () {
-              return {
-                menuItems: [
-                  {
-                    text: "About me",
-                  },
-                  {
-                    text: "Articles",
-                  },
-                  {
-                    text: "contact",
-                  },
-                ],
-              };
-            },
-          },
           "menu-section": {
             template:
               '<ul><li v-for="item in menuItems">{{ item.text }}</li></ul>',
@@ -103,7 +83,7 @@
             },
           },
           "description-section": {
-            template: "<p>{{ text }}</p>",
+            template: '<p v-bind:style="p-2">{{ text }}</p>'',
             data: function () {
               return {
                 text: "Hello, I am Ralph.",
